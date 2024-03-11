@@ -1,0 +1,16 @@
+query historical_markets($block_number: Int) {
+  first_results: markets(
+    first: 1000
+    block: {number: $block_number}
+    orderBy: id
+    orderDirection: asc
+  ) {
+    liquidationThreshold
+    name
+    inputTokenPriceUSD
+    id
+    inputToken {
+      decimals
+    }
+  }
+}

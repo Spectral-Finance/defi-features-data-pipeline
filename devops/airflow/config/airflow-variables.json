@@ -1,0 +1,15 @@
+{
+    "PRICE_AGGREGATOR_AWS_CONFIG": {
+        "env": "dev",
+        "region": "us-east-2",
+        "security_groups": [
+          "sg-0be4452d376e0768e"
+        ],
+        "subnets": [
+          "subnet-0cda999743be8ebeb"
+        ]
+    },
+    "data_lakehouse_bucket": "data-lakehouse",
+    "environment": "dev",
+    "role_arn_emr_serverless": "arn:aws:iam::362197681756:role/data-lakehouse-emr-serverless-role-dev"
+}

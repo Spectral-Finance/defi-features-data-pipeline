@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "defi-features-data-pipeline"
+version = "0.1.0"
+description = ""
+authors = ["Jhon Lucas <jhonlucaslife@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+spectral-data-lib = {version = "2.1.5", source = "spectral-data-repository"}
+requests = "^2.31.0"
+boto3 = "^1.29.5"
+ipykernel = "^6.27.0"
+pre-commit = "^3.5.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,122 @@
+query historical_account_positions($block_number: Int, $last_id: ID) {
+  first_results: positions(
+    where: {id_gt: $last_id, balance_not: "0"}
+    block: {number: $block_number}
+    first: 1000
+    orderBy: id
+    orderDirection: asc
+    skip: 0
+  ) {
+    balance
+    id
+    isCollateral
+    market {
+      id
+      name
+    }
+    side
+    account {
+      id
+    }
+  }
+    second_results: positions(
+    where: {id_gt: $last_id, balance_not: "0"}
+    block: {number: $block_number}
+    first: 1000
+    orderBy: id
+    orderDirection: asc
+    skip: 1000
+  ) {
+    balance
+    id
+    isCollateral
+    market {
+      id
+      name
+    }
+    side
+    account {
+      id
+    }
+  }
+    third_results: positions(
+    where: {id_gt: $last_id, balance_not: "0"}
+    block: {number: $block_number}
+    first: 1000
+    orderBy: id
+    orderDirection: asc
+    skip: 2000
+  ) {
+    balance
+    id
+    isCollateral
+    market {
+      id
+      name
+    }
+    side
+    account {
+      id
+    }
+  }
+    fourth_results: positions(
+    where: {id_gt: $last_id, balance_not: "0"}
+    block: {number: $block_number}
+    first: 1000
+    orderBy: id
+    orderDirection: asc
+    skip: 3000
+  ) {
+    balance
+    id
+    isCollateral
+    market {
+      id
+      name
+    }
+    side
+    account {
+      id
+    }
+  }
+    fifth_results: positions(
+    where: {id_gt: $last_id, balance_not: "0"}
+    block: {number: $block_number}
+    first: 1000
+    orderBy: id
+    orderDirection: asc
+    skip: 4000
+  ) {
+    balance
+    id
+    isCollateral
+    market {
+      id
+      name
+    }
+    side
+    account {
+      id
+    }
+  }
+    sixth_results: positions(
+    where: {id_gt: $last_id, balance_not: "0"}
+    block: {number: $block_number}
+    first: 1000
+    orderBy: id
+    orderDirection: asc
+    skip: 5000
+  ) {
+    balance
+    id
+    isCollateral
+    market {
+      id
+      name
+    }
+    side
+    account {
+      id
+    }
+  }
+}

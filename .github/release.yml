@@ -1,0 +1,34 @@
+# .github/release.yml
+
+changelog:
+  categories:
+    - title: Breaking Changes ❌
+      labels:
+        - breaking_changes
+    - title: Bug Fixes 🛠
+      labels:
+        - bug_fix
+    - title: Exciting New Features 🎉
+      labels:
+        - new_features
+    - title: Improvement 💪🥇
+      labels:
+        - improvement
+        - refactoring
+    - title: Document Update 📚
+      labels:
+        - documentation
+    - title: Duplicate Code 👷
+      labels:
+        - duplicate
+    - title: Need Help 🆘
+      labels:
+        - help wanted
+        - question
+    - title: Invalid
+      labels:
+        - invalid
+    - title: Testing and test cases
+      labels:
+        - testing
+        - report    
