@@ -4,6 +4,39 @@ This project is part of the Spectral Data Lakehouse, this project is responsible
 1. ETL data from Subgraph API's for AAVE and Compound Protocol to the Data Lakehouse.
 1. ETL DeFi events data from Transpose API.
 
+## Features Data Dictionary
+
+This table describes various features used to analyze a user's activity on DeFi protocols such as Compound and AAVE.
+
+| Feature Name | Data Type | Description |
+|---|---|---|
+| risk_factor | float | Reciprocal of the minimum health factor across protocols. |
+| total_collateral_eth | float | Total collateral in ETH across protocols. |
+| total_collateral_avg_eth | float | Average collateral in ETH across protocols, measured on the first block of each day. |
+| total_available_borrows_eth | float | Total amount available to borrow in ETH across protocols. |
+| total_available_borrows_avg_eth | float | Average amount available to borrow in ETH across protocols, measured on the first block of each day. |
+| avg_weighted_risk_factor | float | Weighted average `risk_factor` (weighted by borrow balance) measured on the first block of each day. |
+| risk_factor_above_threshold_daily_count | int | The number of times a wallet's `risk_factor` exceeded a threshold of (1 / 1.2) on the first block of each day. |
+| avg_risk_factor | float | Average of a wallet's `risk_factor` as measured on the first block of each day. |
+| max_risk_factor | float | A wallet's maximum `risk_factor` as measured on the first block of each day. |
+| borrow_amount_sum_eth | float | Sum in ETH of all individual borrow amounts. |
+| borrow_amount_avg_eth | float | Average in ETH of all individual borrow amounts. |
+| borrow_count | int | Number of borrow events initiated by the wallet. |
+| repay_amount_sum_eth | float | Sum in ETH of all individual repayment amounts. |
+| repay_amount_avg_eth | float | Average in ETH of all individual repayment amounts. |
+| repay_count | int | Number of repayment events initiated by the wallet. |
+| borrow_repay_diff_eth | float | `borrow_amount_sum_eth` - `repay_amount_sum_eth` |
+| deposit_count | int | Number of deposit events on DeFi protocols initiated by the wallet. |
+| deposit_amount_sum_eth | float | Sum in ETH of all individual deposit amounts to DeFi protocols. |
+| time_since_first_deposit | int | Time in seconds since a wallet's first deposit event to a DeFi protocol. |
+| withdraw_amount_sum_eth | float | Sum in ETH of all individual withdraw amounts from DeFi protocols. |
+| withdraw_deposit_diff_eth | float | If_positive_eth: maximum(0, `withdraw_amount_sum_eth` - `deposit_amount_sum_eth`) |
+| liquidation_count | int | Number of liquidation events on a wallet's borrow positions. |
+| time_since_last_liquidated | int | Time in seconds since a wallet's last liquidation event. |
+| liquidation_amount_sum_eth | float | Sum in ETH of all individual liquidated collateral amounts. |
+| unique_borrow_protocol_count | int | Count of unique protocols the wallet has borrowed on |
+| unique_lending_protocol_count | int | Count of unique protocols the wallet has deposited assets on |
+
 ### Data Pipeline on Airflow
 
 ![Airflow DAG - Data Pipeline](./docs/airflow_dag.png)
