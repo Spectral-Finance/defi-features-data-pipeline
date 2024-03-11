@@ -4,13 +4,13 @@ locals {
   env        = terraform.workspace == "default" ? "dev" : terraform.workspace
   project    = "defi-features-data-pipeline"
   team       = "data-engineering"
-  account_id = "362197681756" #TODO: Remove this hardcode and use data.aws_caller_identity.current.account_id
+  account_id = "account_id" #TODO: Remove this hardcode and use data.aws_caller_identity.current.account_id
 }
 
 variable "ecr_repo_url" {
   type        = string
   description = "URI of the ECR repository"
-  default     = "362197681756.dkr.ecr.us-east-2.amazonaws.com/data-lakehouse/defi-features-data-pipeline"
+  default     = "account_id.dkr.ecr.us-east-2.amazonaws.com/data-lakehouse/defi-features-data-pipeline"
 }
 
 variable "ecr_repo_image_tag" {

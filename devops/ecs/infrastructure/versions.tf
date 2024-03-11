@@ -2,7 +2,7 @@ terraform {
   required_version = ">= 0.13"
 
   backend "s3" {
-    bucket = "spectral-terraform-state"
+    bucket = "bucket-terraform-state"
     key    = "tf-worskpaces/defi-features-data-pipeline/terraform.tfstate"
     region = "us-east-2"
   }

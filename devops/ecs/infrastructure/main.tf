@@ -171,14 +171,12 @@ data "aws_iam_policy_document" "ecs_task_execution_role" {
     ]
     effect = "Allow"
     resources = [
-      "arn:aws:s3:::spectral-athena-results",
-      "arn:aws:s3:::spectral-athena-results/*",
       "arn:aws:s3:::data-lakehouse-dev",
       "arn:aws:s3:::data-lakehouse-dev/*",
       "arn:aws:s3:::data-lakehouse-prod",
       "arn:aws:s3:::data-lakehouse-prod/*",
-      "arn:aws:s3:::aws-athena-query-results-362197681756-us-east-2",
-      "arn:aws:s3:::aws-athena-query-results-362197681756-us-east-2/*",
+      "arn:aws:s3:::aws-athena-query-results",
+      "arn:aws:s3:::aws-athena-query-results/*",
     ]
   }
 }
